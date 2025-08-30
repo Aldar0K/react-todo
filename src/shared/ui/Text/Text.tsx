@@ -16,14 +16,14 @@ type TextProps = {
   className?: string;
 };
 
-export const Text: FC<TextProps> = props => {
+export const Text: FC<TextProps> = (props) => {
   const {
     heading,
     text,
     theme = 'primary',
     align = 'left',
     size = 'm',
-    className
+    className,
   } = props;
 
   const additionalClasses = [cls[theme], cls[align], cls[size], className];
@@ -31,7 +31,7 @@ export const Text: FC<TextProps> = props => {
   return (
     <div
       className={classNames(cls.container, {}, additionalClasses)}
-      data-testid='Text'
+      data-testid="Text"
     >
       {heading && <h2 className={cls.heading}>{heading}</h2>}
 

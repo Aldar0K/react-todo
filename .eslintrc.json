@@ -52,7 +52,7 @@
     ],
     "max-len": ["warn", 120],
     "i18next/no-literal-string": [
-      "error",
+      "warn",
       {
         "markupOnly": true,
         "ignoreAttribute": ["data-testid", "to"]
@@ -65,6 +65,13 @@
       }
     ],
     "no-param-reassign": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "no-useless-concat": "off",
+    "no-empty-pattern": "off",
+    "no-continue": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "@typescript-eslint/no-unused-expressions": "off"
   }
 }

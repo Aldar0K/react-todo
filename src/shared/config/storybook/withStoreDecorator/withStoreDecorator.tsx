@@ -1,14 +1,12 @@
 import { Decorator } from '@storybook/react';
 import {
-  ReducerList,
-  StateSchema,
-  StoreProvider
+    DeepPartial,
+    ReducerList,
+    StateSchema,
+    StoreProvider
 } from 'app/providers/StoreProvider';
-import { loginByUsernameReducer } from 'features/user/login-by-username/model/slice';
 
-const defaultAsyncReducers: ReducerList = {
-  loginByUsername: loginByUsernameReducer
-};
+const defaultAsyncReducers: ReducerList = {};
 
 export const withStoreDecorator =
   (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList): Decorator =>

@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 
 import 'shared/config/i18n/i18n';
 
@@ -13,12 +12,10 @@ const root = createRoot(container);
 
 root.render(
   <StoreProvider>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </ErrorBoundary>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </StoreProvider>,
 );

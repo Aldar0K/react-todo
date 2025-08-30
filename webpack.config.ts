@@ -13,7 +13,7 @@ export default (env: BuildEnv) => {
     locales: path.resolve(__dirname, 'public', 'locales'),
     buildLocales: path.resolve(__dirname, 'build', 'locales'),
     meta: path.resolve(__dirname, 'public', 'meta'),
-    buildMeta: path.resolve(__dirname, 'build', 'meta')
+    buildMeta: path.resolve(__dirname, 'build', 'meta'),
   };
 
   const mode = env.mode || 'development';
@@ -28,7 +28,7 @@ export default (env: BuildEnv) => {
     isDev,
     port,
     apiUrl,
-    project: 'frontend'
+    project: 'frontend',
   });
 
   return config;

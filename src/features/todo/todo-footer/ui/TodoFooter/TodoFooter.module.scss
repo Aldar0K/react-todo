@@ -1,0 +1,70 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+
+  color: #666;
+  font-size: 14px;
+
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.todoCount {
+  font-weight: 500;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.filterButton {
+  padding: 6px 12px;
+
+  color: #666;
+  font-size: 14px;
+
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  &:hover {
+    color: #333;
+
+    border-color: #ddd;
+  }
+
+  &.selected {
+    color: #007bff;
+
+    background-color: rgb(0 123 255 / 10%);
+    border-color: #007bff;
+  }
+}
+
+.clearCompleted {
+  padding: 6px 12px;
+
+  color: white;
+  font-size: 14px;
+
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #c82333;
+  }
+}

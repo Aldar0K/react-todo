@@ -1,0 +1,26 @@
+.todoApp {
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+}
+
+.header {
+  padding: 20px 20px 0;
+}
+
+.title {
+  margin-bottom: 20px;
+
+  color: #333;
+  font-weight: 300;
+  font-size: 48px;
+  text-align: center;
+}
+
+.main {
+  /* Main container for todo list and footer */
+}

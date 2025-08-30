@@ -10,19 +10,21 @@ type SkeletonProps = {
   className?: string;
 };
 
-export const Skeleton: FC<SkeletonProps> = props => {
-  const { height, width, border = 16, className } = props;
+export const Skeleton: FC<SkeletonProps> = (props) => {
+  const {
+    height, width, border = 16, className,
+  } = props;
   const style: CSSProperties = {
     height,
     maxWidth: width,
-    borderRadius: border
+    borderRadius: border,
   };
 
   return (
     <div
       style={style}
       className={classNames(cls.skeleton, {}, [className])}
-      data-testid='Skeleton'
+      data-testid="Skeleton"
     />
   );
 };

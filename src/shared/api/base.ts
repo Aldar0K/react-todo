@@ -4,7 +4,7 @@ export const baseUrl = __API_URL__;
 
 const baseQuery = fetchBaseQuery({
   baseUrl,
-  prepareHeaders: (headers, {}) => headers
+  prepareHeaders: (headers, {}) => headers,
 });
 
 // const baseQueryWithReauth = async (
@@ -18,5 +18,5 @@ const baseQuery = fetchBaseQuery({
 
 export const api = createApi({
   baseQuery,
-  endpoints: () => ({})
+  endpoints: () => ({}),
 });

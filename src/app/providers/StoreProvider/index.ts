@@ -12,6 +12,7 @@ export {
 } from './model/store';
 
 export type {
+  DeepPartial,
   ReducerList,
   ReducerManager,
   ReducersListEntry,

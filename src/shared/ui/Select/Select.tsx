@@ -17,7 +17,9 @@ interface SelectProps {
 }
 
 export const Select = memo((props: SelectProps) => {
-  const { className, label, options, onChange, value, readonly } = props;
+  const {
+    className, label, options, onChange, value, readonly,
+  } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
@@ -26,13 +28,12 @@ export const Select = memo((props: SelectProps) => {
   };
 
   const optionsList = useMemo(
-    () =>
-      options?.map(opt => (
-        <option className={cls.option} value={opt.value} key={opt.value}>
-          {opt.content}
-        </option>
-      )),
-    [options]
+    () => options?.map((opt) => (
+      <option className={cls.option} value={opt.value} key={opt.value}>
+        {opt.content}
+      </option>
+    )),
+    [options],
   );
 
   const mods: Mods = {};

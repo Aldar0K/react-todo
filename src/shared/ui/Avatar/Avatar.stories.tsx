@@ -9,7 +9,7 @@ const meta = {
   title: 'shared/Avatar',
   component: Avatar,
   tags: ['autodocs'],
-  args: {}
+  args: {},
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
@@ -18,47 +18,47 @@ type Story = StoryObj<typeof meta>;
 export const DefaultLight: Story = {
   args: {
     size: 100,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)]
+  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
 export const DefaultDark: Story = {
   args: {
     size: 100,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.DARK)]
+  decorators: [withThemeDecorator(AppThemes.DARK)],
 };
 
 export const SmallLight: Story = {
   args: {
     size: 50,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)]
+  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
 export const SmallDark: Story = {
   args: {
     size: 50,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.DARK)]
+  decorators: [withThemeDecorator(AppThemes.DARK)],
 };
 
 export const BigLight: Story = {
   args: {
     size: 300,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)]
+  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
 export const BigDark: Story = {
   args: {
     size: 300,
-    src: AvatarImg
+    src: AvatarImg,
   },
-  decorators: [withThemeDecorator(AppThemes.DARK)]
+  decorators: [withThemeDecorator(AppThemes.DARK)],
 };

@@ -1,9 +1,10 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import { createReduxStore } from '../model/store';
-import { StateSchema } from '../model/types';
+import { createPersistor, createReduxStore } from '../model/store';
+import { DeepPartial, StateSchema } from '../model/types';
 
 type StoreProviderProps = {
   children?: ReactNode;
@@ -19,5 +20,13 @@ export const StoreProvider: FC<StoreProviderProps> = (props) => {
     asyncReducers as ReducersMapObject<StateSchema>,
   );
 
-  return <Provider store={store}>{children}</Provider>;
+  const persistor = createPersistor(store);
+
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
+    </Provider>
+  );
 };

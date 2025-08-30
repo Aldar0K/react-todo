@@ -1,0 +1,28 @@
+.addTodo {
+  padding: 20px;
+
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+
+  font-size: 18px;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgb(0 123 255 / 10%);
+  }
+}

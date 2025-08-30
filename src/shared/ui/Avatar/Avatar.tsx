@@ -10,14 +10,16 @@ type AvatarProps = {
 };
 
 export const Avatar = (props: AvatarProps) => {
-  const { className, src, size, alt } = props;
+  const {
+    className, src, size, alt,
+  } = props;
 
   const style = useMemo<CSSProperties>(
     () => ({
       width: size || 100,
-      height: size || 100
+      height: size || 100,
     }),
-    [size]
+    [size],
   );
 
   return (

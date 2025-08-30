@@ -1,0 +1,16 @@
+.edit {
+  display: block;
+  width: 100%;
+  padding: 12px;
+
+  font-size: 16px;
+
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgb(0 123 255 / 10%);
+  }
+}
+

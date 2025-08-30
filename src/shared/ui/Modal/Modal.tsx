@@ -16,17 +16,19 @@ type ModalProps = {
   className?: string;
 };
 
-export const Modal: FC<ModalProps> = props => {
-  const { children, isOpen, onClose, title, description, className } = props;
+export const Modal: FC<ModalProps> = (props) => {
+  const {
+    children, isOpen, onClose, title, description, className,
+  } = props;
   const { theme } = useTheme();
 
   return (
     <Transition as={Fragment} appear show={isOpen}>
       <Dialog
-        as='div'
+        as="div"
         onClose={onClose}
         className={classNames(cls.container, {}, [theme])}
-        data-testid='Modal'
+        data-testid="Modal"
       >
         <Transition.Child
           as={Fragment}
@@ -37,7 +39,7 @@ export const Modal: FC<ModalProps> = props => {
           leaveFrom={cls.leaveFrom}
           leaveTo={cls.leaveTo}
         >
-          <div className={cls.backdrop} aria-hidden='true' />
+          <div className={cls.backdrop} aria-hidden="true" />
         </Transition.Child>
 
         <div className={cls['panel-wrapper']}>
@@ -53,7 +55,7 @@ export const Modal: FC<ModalProps> = props => {
             >
               <Dialog.Panel className={classNames(cls.panel, {}, [className])}>
                 {title && (
-                  <Dialog.Title as='h3' title={title} className={cls.title}>
+                  <Dialog.Title as="h3" title={title} className={cls.title}>
                     {title}
                   </Dialog.Title>
                 )}

@@ -2,27 +2,17 @@ import {
   Action,
   EnhancedStore,
   Reducer,
-  ReducersMapObject
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 
-import { ArticleDetailsSchema } from 'entities/article';
-import { CounterSchema } from 'entities/counter';
-import { ProfileSchema } from 'entities/profile';
-import { UserSchema } from 'entities/user';
-import { AddCommentSchema } from 'features/user/add-comment';
-import { LoginByUsernameSchema } from 'features/user/login-by-username';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { TodosState } from 'entities/todo';
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
+};
 
 export type StateSchema = {
-  counter: CounterSchema;
-  user: UserSchema;
-
-  // async reducers
-  loginByUsername?: LoginByUsernameSchema;
-  profile?: ProfileSchema;
-  articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
-  addComment?: AddCommentSchema;
+  todos: TodosState;
 };
 
 export type StateSchemaKey = keyof StateSchema;

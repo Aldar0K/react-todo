@@ -4,15 +4,15 @@ import {
   memo,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 
 import { classNames } from 'shared/lib';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readOnly'
+InputHTMLAttributes<HTMLInputElement>,
+'value' | 'onChange' | 'readOnly'
 >;
 
 type InputProps = HTMLInputProps & {
@@ -44,7 +44,7 @@ export const Input = memo((props: InputProps) => {
     }
   }, [autoFocus]);
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = event => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     onChange?.(event.target.value);
   };
 
@@ -59,7 +59,7 @@ export const Input = memo((props: InputProps) => {
   return (
     <div
       className={classNames(cls.container, {}, [className])}
-      data-testid='Input'
+      data-testid="Input"
     >
       {placeholder && (
         <span className={cls.placeholder}>{`${placeholder}>`}</span>
@@ -77,9 +77,9 @@ export const Input = memo((props: InputProps) => {
           cls.input,
           {
             [cls.readonly]: readonly,
-            [cls.focused]: isFocused
+            [cls.focused]: isFocused,
           },
-          []
+          [],
         )}
         {...otherProps}
       />

@@ -6,13 +6,20 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-import { counterReducer } from 'entities/counter';
-import { userReducer } from 'entities/user';
+import { todoReducer } from 'entities/todo';
 import { NavigateOptions, To } from 'react-router-dom';
 import { $api } from 'shared/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './types';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['todos'], // только todos будет сохраняться
+};
 
 const createReduxStore = (
   initialState?: StateSchema,
@@ -21,11 +28,11 @@ const createReduxStore = (
 ) => {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    counter: counterReducer,
-    user: userReducer,
+    todos: todoReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
+  const persistedReducer = persistReducer(persistConfig, reducerManager.reduce as Reducer<StateSchema, Action, StateSchema>);
 
   const extraArgument: ThunkExtraArg = {
     api: $api,
@@ -33,10 +40,12 @@ const createReduxStore = (
   };
 
   const store = configureStore({
-    reducer: reducerManager.reduce as Reducer<StateSchema, Action, StateSchema>,
+    reducer: persistedReducer,
     devTools: __IS_DEV__,
-    preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+      },
       thunk: {
         extraArgument,
       },
@@ -49,10 +58,9 @@ const createReduxStore = (
   return store;
 };
 
-// TODO restore the redux persist configuration
-// const persistor = persistStore(createReduxStore());
-
 export { createReduxStore };
+
+export const createPersistor = (store: ReturnType<typeof createReduxStore>) => persistStore(store);
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 

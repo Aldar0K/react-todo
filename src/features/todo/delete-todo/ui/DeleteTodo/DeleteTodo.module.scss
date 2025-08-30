@@ -1,0 +1,23 @@
+.destroy {
+  width: 24px;
+  height: 24px;
+
+  color: #dc3545;
+  font-size: 20px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+
+  transition: opacity 0.2s;
+
+  &:hover {
+    color: #c82333;
+  }
+
+  &::after {
+    content: '×';
+  }
+}
+
