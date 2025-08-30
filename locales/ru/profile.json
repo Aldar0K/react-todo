@@ -1,0 +1,20 @@
+{
+  "Profile": "Профиль",
+  "First name": "Имя",
+  "Last name": "Фамилия",
+  "Username": "Псевдоним",
+  "Age": "Возраст",
+  "City": "Город",
+  "Avatar Url": "Ссылка на аватар",
+  "Profile error": "Ошибка при загрузке профиля",
+  "No profile data": "Нет данных профиля",
+  "Server error": "Ошибка на сервере",
+  "Incorrect first name": "Некорректное имя",
+  "Incorrect last name": "Некорректная фамилия",
+  "Incorrect username": "Некорректный псевдоним",
+  "Incorrect age": "Некорректный возраст",
+  "Incorrect city": "Некорректный город",
+  "Incorrect country": "Некорректная страна",
+  "Incorrect currency": "Некорректная валюта",
+  "Incorrect avatar url": "Некорректная ссылка на аватар"
+}

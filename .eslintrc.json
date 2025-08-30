@@ -1,0 +1,77 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": ["i18next"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "globals": {
+    "__IS_DEV__": true,
+    "__API__": true,
+    "__PROJECT__": true
+  },
+  "overrides": [
+    {
+      "files": ["**/src/**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/button-has-type": "off",
+    "eslintreact/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "max-len": ["warn", 120],
+    "i18next/no-literal-string": [
+      "warn",
+      {
+        "markupOnly": true,
+        "ignoreAttribute": ["data-testid", "to"]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-param-reassign": "off",
+    "react/prop-types": "off",
+    "no-useless-concat": "off",
+    "no-empty-pattern": "off",
+    "no-continue": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "@typescript-eslint/no-unused-expressions": "off"
+  }
+}

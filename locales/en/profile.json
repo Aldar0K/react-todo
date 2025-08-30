@@ -1,0 +1,20 @@
+{
+  "Profile": "Profile",
+  "First name": "First name",
+  "Last name": "Last name",
+  "Username": "Username",
+  "Age": "Age",
+  "City": "City",
+  "Avatar Url": "Avatar Url",
+  "Profile error": "Error while loading profile",
+  "No profile data": "No profile data",
+  "Server error": "Server error",
+  "Incorrect first name": "Incorrect first name",
+  "Incorrect last name": "Incorrect last name",
+  "Incorrect username": "Incorrect username",
+  "Incorrect age": "Incorrect age",
+  "Incorrect city": "Incorrect city",
+  "Incorrect country": "Incorrect country",
+  "Incorrect currency": "Incorrect currency",
+  "Incorrect avatar url": "Incorrect avatar url"
+}

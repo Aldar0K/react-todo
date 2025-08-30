@@ -1,0 +1,38 @@
+name: linting, testing, building
+run-name: ${{ github.actor }} linting, testing, building 🚀
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing dependencies
+        run: npm install
+      - name: Building production version
+        run: npm run build:prod
+      - name: Linting Typescript
+        run: npm run lint
+        if: always()
+      - name: Linting CSS
+        run: npm run stylelint
+        if: always()
+      - name: Unit testing
+        run: npm run test:unit
+        if: always()
+      - name: Building Storybook
+        run: npm run storybook:build
+        if: always()
+      - name: Screenshots testing
+        run: npm run test:ui:ci
+        if: always()
