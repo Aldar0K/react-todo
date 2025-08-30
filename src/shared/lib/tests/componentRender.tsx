@@ -18,9 +18,7 @@ export const componentRender = (
 ) => {
   const { route = '/', initialState } = options;
   const store = configureStore({
-    reducer: {
-      todos: todoReducer,
-    },
+    reducer: todoReducer,
     preloadedState: initialState,
   });
 
