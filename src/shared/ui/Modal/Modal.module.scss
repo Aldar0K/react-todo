@@ -1,0 +1,101 @@
+.dialog {
+  position: relative;
+  z-index: var(--z-index-modal);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: var(--color-backdrop);
+}
+
+.panel-wrapper {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+
+  overflow-y: auto;
+}
+
+.panel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
+  padding: var(--padding-l);
+
+  text-align: center;
+}
+
+.panel {
+  position: relative;
+
+  min-width: var(--min-width-modal);
+  max-width: var(--max-width-modal);
+
+  margin: 0 auto;
+  padding: var(--padding-xl);
+
+  overflow: hidden;
+
+  color: var(--color-primary-inverted);
+
+  vertical-align: middle;
+
+  background: var(--color-bg-inverted);
+  border-radius: var(--border-radius-s);
+
+  transition: all;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.description {
+  margin-bottom: 16px;
+}
+
+.button-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  padding: 4px;
+
+  background: none;
+}
+
+.icon-close {
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-primary-inverted);
+}
+
+.enter {
+  transition: opacity 200ms ease-in-out;
+}
+
+.enterFrom {
+  opacity: 0;
+}
+
+.enterTo {
+  opacity: 100;
+}
+
+.leave {
+  transition: opacity 200ms ease-in-out;
+}
+
+.leaveFrom {
+  opacity: 100;
+}
+
+.leaveTo {
+  opacity: 0;
+}

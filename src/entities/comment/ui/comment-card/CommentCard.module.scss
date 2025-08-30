@@ -1,0 +1,16 @@
+.container {
+  padding: var(--padding-s);
+
+  border: 1px solid var(--color-primary);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: var(--gap-m);
+}
+
+.avatar {
+  margin-right: var(--gap-m);
+}

@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-m);
+
+  padding: var(--padding-m);
+
+  overflow: auto;
+
+  color: var(--color-primary);
+  font-size: var(--font-size-s);
+  line-height: var(--font-line-s);
+
+  background: var(--color-bg-code);
+  border: 1px solid var(--color-primary);
+}
+
+.button-copy {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+}
+
+.icon-copy {
+  fill: none;
+
+  & path {
+    stroke: var(--color-primary);
+  }
+}

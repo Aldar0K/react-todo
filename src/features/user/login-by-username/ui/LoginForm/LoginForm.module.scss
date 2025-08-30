@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 500px;
+}
+
+.error {
+  color: rgb(255 0 0 / 40%);
+}
+
+.button-submit {
+  margin-left: auto;
+}

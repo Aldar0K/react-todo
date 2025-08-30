@@ -1,0 +1,29 @@
+.container {
+  padding: 18px;
+
+  border: 2px solid var(--color-bg-inverted);
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 300px;
+}
+
+.editing {
+  border: 2px solid var(--color-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+}

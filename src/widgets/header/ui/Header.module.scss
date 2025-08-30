@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: var(--gap-s);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--height-navbar);
+  padding: 20px;
+
+  background: var(--color-bg-inverted);
+}
+
+.links {
+  display: flex;
+  gap: var(--gap-s);
+}
+
+.right {
+  display: flex;
+  gap: var(--gap-s);
+  align-items: center;
+}
