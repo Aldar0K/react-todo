@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import { todoReducer } from 'entities/todo';
 import { ReactNode } from 'react';
@@ -17,8 +17,12 @@ export const componentRender = (
   options: ComponentRenderOptions = {},
 ) => {
   const { route = '/', initialState } = options;
+  const rootReducer = combineReducers({
+    todos: todoReducer,
+  });
+
   const store = configureStore({
-    reducer: todoReducer,
+    reducer: rootReducer,
     preloadedState: initialState,
   });
 
