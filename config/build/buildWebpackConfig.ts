@@ -22,7 +22,7 @@ export const buildWebpackConfig = (
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
-      publicPath: '/'
+      publicPath: isDev ? '/' : './'
     },
     plugins: buildPlugins(options),
     devServer: isDev ? buildDevServer(options) : undefined,
