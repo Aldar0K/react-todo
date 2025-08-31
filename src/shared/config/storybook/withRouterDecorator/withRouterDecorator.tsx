@@ -1,4 +1,8 @@
 import { Decorator } from "@storybook/react";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
-export const withRouterDecorator: Decorator = (Story) => <BrowserRouter><Story/></BrowserRouter>
+export const withRouterDecorator = (initialEntries?: string[]): Decorator => (Story) => (
+  <MemoryRouter initialEntries={initialEntries || ['/']}>
+    <Story />
+  </MemoryRouter>
+);

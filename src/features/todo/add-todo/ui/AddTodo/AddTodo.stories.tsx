@@ -1,20 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { withStoreDecorator } from 'shared/config/storybook/withStoreDecorator/withStoreDecorator';
-import MainPage from './MainPage';
+import { AddTodo } from './AddTodo';
 
 const meta = {
-  title: 'pages/MainPage',
-  component: MainPage,
+  title: 'features/AddTodo',
+  component: AddTodo,
   tags: ['autodocs'],
-  args: {},
-  decorators: [withStoreDecorator()], // Add Redux store for all stories
-} satisfies Meta<typeof MainPage>;
+  parameters: {
+    layout: 'centered',
+  },
+  decorators: [withStoreDecorator()],
+} satisfies Meta<typeof AddTodo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  decorators: [withStoreDecorator()],
+};
 
 export const WithInitialTodos: Story = {
   decorators: [
@@ -23,14 +27,8 @@ export const WithInitialTodos: Story = {
         todos: [
           {
             id: '1',
-            text: 'Learn React',
+            text: 'Existing todo',
             completed: false,
-            createdAt: Date.now(),
-          },
-          {
-            id: '2',
-            text: 'Build Todo App',
-            completed: true,
             createdAt: Date.now(),
           },
         ],

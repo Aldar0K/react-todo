@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppThemes } from 'app/providers/ThemeProvider';
-import { withThemeDecorator } from 'shared/config/storybook/withThemeDecorator/withThemeDecorator';
+import { withRouterDecorator } from 'shared/config/storybook/withRouterDecorator/withRouterDecorator';
 import { AppLink, AppLinkThemes } from './AppLink';
 
 const meta = {
@@ -12,43 +11,29 @@ const meta = {
     to: '/',
     children: 'AppLink',
   },
+  decorators: [withRouterDecorator()], // Add Router decorator for Link component
 } satisfies Meta<typeof AppLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultLight: Story = {
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
-};
+export const Default: Story = {};
 
-export const DefaultDark: Story = {
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const PrimaryLight: Story = {
+export const Primary: Story = {
   args: {
     theme: AppLinkThemes.PRIMARY,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const PrimaryDark: Story = {
-  args: {
-    theme: AppLinkThemes.PRIMARY,
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const SecondaryLight: Story = {
+export const Secondary: Story = {
   args: {
     theme: AppLinkThemes.SECONDARY,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const SecondaryDark: Story = {
+export const WithCustomPath: Story = {
   args: {
-    theme: AppLinkThemes.SECONDARY,
+    to: '/dashboard',
+    children: 'Go to Dashboard',
   },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
 };

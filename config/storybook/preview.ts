@@ -1,9 +1,6 @@
 import type { Preview } from "@storybook/react";
 
-import { AppThemes } from "../../src/app/providers/ThemeProvider";
-import { withRouterDecorator } from '../../src/shared/config/storybook/withRouterDecorator';
-import { withStyleDecorator } from '../../src/shared/config/storybook/withStyleDecorator';
-import { withThemeDecorator } from '../../src/shared/config/storybook/withThemeDecorator';
+import '../../src/app/styles/main.scss';
 
 const preview: Preview = {
   parameters: {
@@ -14,12 +11,21 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+        {
+          name: 'dark',
+          value: '#000000',
+        },
+      ],
+    },
   },
-  decorators: [
-    withStyleDecorator,
-    withRouterDecorator,
-    // withThemeDecorator(AppThemes.LIGHT)
-  ],
+  decorators: [],
 };
 
 export default preview;

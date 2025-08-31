@@ -99,6 +99,12 @@ npm run create:page       # Generate new page
 - **jsdom** environment for DOM simulation
 - Custom `componentRender` utility with providers
 
+### Storybook Development
+- **Component Documentation**: Interactive component showcase
+- **Visual Testing**: Component testing in isolation
+- **Design System**: Centralized component library
+- **Addons**: Themes, accessibility, and interactions
+
 ### Test Structure
 ```
 ComponentName/
@@ -114,6 +120,12 @@ ComponentName/
 - `renderWithRouter`: Router-specific test utility
 - `renderWithTranslation`: i18n-specific test utility
 - `withStoreDecorator`: Storybook decorator for Redux
+
+### Storybook Decorators
+- `withStoreDecorator`: Provides Redux store context
+- `withRouterDecorator`: Provides React Router context
+- `withStyleDecorator`: Provides global styles
+- Built-in theme switching via `@storybook/addon-themes`
 
 ## State Management
 
@@ -266,6 +278,16 @@ npm run storybook
 # Build for production
 npm run storybook:build
 ```
+
+**Storybook Features:**
+- Modern configuration with TypeScript support
+- CSS Modules support with SCSS
+- Theme switching (light/dark)
+- Redux store integration via decorators
+- Router integration for navigation components
+- Accessibility addon for better UX testing
+- Automatic documentation generation
+- Fixed global variables and React resolution
 
 ## Common Patterns
 

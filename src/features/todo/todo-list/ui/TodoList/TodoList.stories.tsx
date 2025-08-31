@@ -1,22 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { withStoreDecorator } from 'shared/config/storybook/withStoreDecorator/withStoreDecorator';
-import MainPage from './MainPage';
+import { TodoList } from './TodoList';
 
 const meta = {
-  title: 'pages/MainPage',
-  component: MainPage,
+  title: 'features/TodoList',
+  component: TodoList,
   tags: ['autodocs'],
-  args: {},
+  parameters: {
+    layout: 'centered',
+  },
   decorators: [withStoreDecorator()], // Add Redux store for all stories
-} satisfies Meta<typeof MainPage>;
+} satisfies Meta<typeof TodoList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const WithInitialTodos: Story = {
+export const WithTodos: Story = {
   decorators: [
     withStoreDecorator({
       todos: {
@@ -33,7 +35,24 @@ export const WithInitialTodos: Story = {
             completed: true,
             createdAt: Date.now(),
           },
+          {
+            id: '3',
+            text: 'Write Tests',
+            completed: false,
+            createdAt: Date.now(),
+          },
         ],
+        filter: 'all',
+      },
+    }),
+  ],
+};
+
+export const Empty: Story = {
+  decorators: [
+    withStoreDecorator({
+      todos: {
+        todos: [],
         filter: 'all',
       },
     }),

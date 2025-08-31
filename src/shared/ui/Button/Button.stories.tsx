@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppThemes } from 'app/providers/ThemeProvider';
-import { withThemeDecorator } from 'shared/config/storybook/withThemeDecorator/withThemeDecorator';
 import { Button } from './Button';
 
 const meta = {
@@ -11,169 +9,79 @@ const meta = {
   args: {
     children: 'Button',
   },
+  parameters: {
+    layout: 'centered',
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultLight: Story = {
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
-};
+export const Default: Story = {};
 
-export const DefaultDark: Story = {
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const ClearLight: Story = {
+export const Clear: Story = {
   args: {
     theme: 'clear',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const ClearDark: Story = {
-  args: {
-    theme: 'clear',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const OutlineLight: Story = {
+export const Outline: Story = {
   args: {
     theme: 'outline',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const OutlineDark: Story = {
-  args: {
-    theme: 'outline',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const BackgroundLight: Story = {
+export const Background: Story = {
   args: {
     theme: 'background',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const BackgroundDark: Story = {
-  args: {
-    theme: 'background',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const BackgroundInvertedLight: Story = {
+export const BackgroundInverted: Story = {
   args: {
     theme: 'background-inverted',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const BackgroundInvertedDark: Story = {
-  args: {
-    theme: 'background-inverted',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const SquareLight: Story = {
+export const Square: Story = {
   args: {
     square: true,
     theme: 'background-inverted',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const SquareDark: Story = {
-  args: {
-    square: true,
-    theme: 'background-inverted',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const SquareSizeSmallLight: Story = {
+export const SquareSizeSmall: Story = {
   args: {
     square: true,
     size: 'small',
     theme: 'background-inverted',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const SquareSizeSmallDark: Story = {
-  args: {
-    square: true,
-    size: 'small',
-    theme: 'background-inverted',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const SquareSizeMediumLight: Story = {
+export const SquareSizeMedium: Story = {
   args: {
     square: true,
     size: 'medium',
     theme: 'background-inverted',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const SquareSizeMediumDark: Story = {
-  args: {
-    square: true,
-    size: 'medium',
-    theme: 'background-inverted',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const SquareSizeLargeLight: Story = {
+export const SquareSizeLarge: Story = {
   args: {
     square: true,
     size: 'large',
     theme: 'background-inverted',
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const SquareSizeLargeDark: Story = {
-  args: {
-    square: true,
-    size: 'large',
-    theme: 'background-inverted',
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const DisabledLight: Story = {
+export const Disabled: Story = {
   args: {
     disabled: true,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
 };
 
-export const DisabledDark: Story = {
-  args: {
-    disabled: true,
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
-};
-
-export const LoadingLight: Story = {
+export const Loading: Story = {
   args: {
     loading: true,
   },
-  decorators: [withThemeDecorator(AppThemes.LIGHT)],
-};
-
-export const LoadingDark: Story = {
-  args: {
-    loading: true,
-  },
-  decorators: [withThemeDecorator(AppThemes.DARK)],
 };

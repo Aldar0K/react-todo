@@ -1,22 +1,37 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Select } from 'shared/ui/Select/Select';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import { AppThemes } from 'app/providers/ThemeProvider';
+import { withThemeDecorator } from 'shared/config/storybook/withThemeDecorator/withThemeDecorator';
+import { Select } from './Select';
+
+const meta = {
   title: 'shared/Select',
   component: Select,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  tags: ['autodocs'],
+  args: {},
+} satisfies Meta<typeof Select>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const DefaultLight: Story = {
+  args: {
+    label: 'Укажите значение',
+    options: [
+      { value: '123', content: 'Первый пункт' },
+      { value: '1234', content: 'Второй пункт' },
+    ],
   },
-} as ComponentMeta<typeof Select>;
+  decorators: [withThemeDecorator(AppThemes.LIGHT)],
+};
 
-const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  label: 'Укажите значение',
-  options: [
-    { value: '123', content: 'Первый пункт' },
-    { value: '1234', content: 'Второй пункт' },
-  ],
+export const DefaultDark: Story = {
+  args: {
+    label: 'Укажите значение',
+    options: [
+      { value: '123', content: 'Первый пункт' },
+      { value: '1234', content: 'Второй пункт' },
+    ],
+  },
+  decorators: [withThemeDecorator(AppThemes.DARK)],
 };
