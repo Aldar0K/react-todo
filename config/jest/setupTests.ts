@@ -5,6 +5,9 @@ import 'regenerator-runtime/runtime';
 (global as any).__IS_DEV__ = true;
 (global as any).__API_URL__ = 'http://localhost:8000';
 
+// Mock fetch function
+(global as any).fetch = jest.fn();
+
 // Mock localStorage
 const localStorageMock = {
   getItem: jest.fn(),
