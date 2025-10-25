@@ -1,12 +1,9 @@
-// Mocks for Storybook to replace StoreProvider functionality
+import { jest } from '@storybook/jest';
+import type { ReactNode } from 'react';
 
 // Mock dispatch function
 export const mockDispatch = jest.fn();
 
-// Mock useAppDispatch hook
-export const useAppDispatch = () => mockDispatch;
-
-// Mock useAppSelector hook
 export const useAppSelector = (selector: any) => {
   // Return mock data based on selector
   if (selector.name === 'getTodos') return [];
@@ -16,12 +13,10 @@ export const useAppSelector = (selector: any) => {
   return undefined;
 };
 
-// Mock StoreProvider component
-export const StoreProvider = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
-};
+export const useAppDispatch = () => mockDispatch;
 
-// Export all mocks
+export const StoreProvider = ({ children }: { children: ReactNode }) => children;
+
 export const mocks = {
   useAppDispatch,
   useAppSelector,
